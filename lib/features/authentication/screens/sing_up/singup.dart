@@ -1,10 +1,10 @@
 
+import 'package:fesaa_final_project/common/widgets/login_singup/form_divider.dart';
+import 'package:fesaa_final_project/common/widgets/login_singup/social_bottoms.dart';
+import 'package:fesaa_final_project/features/authentication/screens/sing_up/widgets/singup_form.dart';
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
 import 'package:fesaa_final_project/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:iconsax/iconsax.dart';
 
 class SingUpScreen extends StatelessWidget {
   const SingUpScreen({super.key});
@@ -17,6 +17,7 @@ class SingUpScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Title
               Text(
@@ -28,36 +29,19 @@ class SingUpScreen extends StatelessWidget {
               ),
 
               /// Form
-              Form(
-                  child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          expands: false,
-                          decoration: const InputDecoration(
-                            labelText: TTexts.firstName,
-                            prefixIcon: Icon(Iconsax.user),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: TSizes.spaceBtwInputFields,
-                      ),
-                      Expanded(
-                        child: TextFormField(
-                          expands: false,
-                          decoration: const InputDecoration(
-                            labelText: TTexts.firstName,
-                            prefixIcon: Icon(Iconsax.user),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ))
+              const SingUpForm(),
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
+
+              /// Divider
+              const TFormDivider(dividerText: TTexts.orSignInWith),
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
+
+              /// SocialBottoms
+              const SocialBottom()
             ],
           ),
         ),
