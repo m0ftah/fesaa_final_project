@@ -1,4 +1,5 @@
 
+import 'package:fesaa_final_project/features/authentication/screens/password_configration/forget_password.dart';
 import 'package:fesaa_final_project/features/authentication/screens/sing_up/singup.dart';
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
 import 'package:fesaa_final_project/utils/constants/text_strings.dart';
@@ -46,11 +47,11 @@ class LoginForm extends StatelessWidget {
                 Row(
                   children: [
                     Checkbox(value: true, onChanged: (value) {}),
-                    const Text(TTexts.rememberMe),
+                    const Text(TTexts.rememberMe), 
                   ],
                 ),
                 TextButton(
-                    onPressed: () {}, child: const Text(TTexts.forgetPassword))
+                    onPressed: () => Get.to(() => const ForgetPassword()), child: const Text(TTexts.forgetPassword))
               ],
             ),
 
