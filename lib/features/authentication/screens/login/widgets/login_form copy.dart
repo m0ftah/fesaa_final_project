@@ -1,6 +1,6 @@
-
 import 'package:fesaa_final_project/features/authentication/screens/password_configration/forget_password.dart';
 import 'package:fesaa_final_project/features/authentication/screens/sing_up/singup.dart';
+import 'package:fesaa_final_project/navigation_menu.dart';
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
 import 'package:fesaa_final_project/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -47,11 +47,12 @@ class LoginForm extends StatelessWidget {
                 Row(
                   children: [
                     Checkbox(value: true, onChanged: (value) {}),
-                    const Text(TTexts.rememberMe), 
+                    const Text(TTexts.rememberMe),
                   ],
                 ),
                 TextButton(
-                    onPressed: () => Get.to(() => const ForgetPassword()), child: const Text(TTexts.forgetPassword))
+                    onPressed: () => Get.to(() => const ForgetPassword()),
+                    child: const Text(TTexts.forgetPassword))
               ],
             ),
 
@@ -62,7 +63,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(TTexts.signIn),
               ),
             ),
