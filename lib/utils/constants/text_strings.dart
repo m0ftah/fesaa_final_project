@@ -40,6 +40,8 @@ class TTexts {
   static const String verificationCode = "verificationCode";
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
+  static const String setLocationOnMap = "Set Location On Map";
+  static const String useCurrentlocation = "Use Current Location";
 
   // -- Authentication Headings
   static const String loginTitle = "Welcome back,";
@@ -61,11 +63,14 @@ class TTexts {
       "Your account successfully created!";
   static const String yourAccountCreatedSubTitle =
       "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
+  static const String chooseYourLocationHeading = "Choose your Location";
+  static const String chooseYourLocationSubHeading =
+      "Let’s Find your unforgattble event , Choose a location below to get started.";
 
   // -- Product
   static const String popularProducts = "Popular Products";
 
   // -- Home
-  static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Taimoor Sikander";
+  static const String homeAppbarTitle = "What you are looking for today";
+  static const String homeAppbarSubTitle = "Moftah ";
 }

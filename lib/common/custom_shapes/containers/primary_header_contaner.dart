@@ -1,4 +1,3 @@
-
 import 'package:fesaa_final_project/common/custom_shapes/containers/circular_container.dart';
 import 'package:fesaa_final_project/common/custom_shapes/curved_edges/curved_edges_wiget.dart';
 import 'package:fesaa_final_project/utils/constants/colors.dart';
@@ -18,8 +17,6 @@ class TPrimaryHeaderContaner extends StatelessWidget {
         color: TColors.primary,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
-          height: 360,
-
           /// if [size.isFinite : is not true in stack ] error ocurd in README.md file at [Documentation]
           child: Stack(
             children: [

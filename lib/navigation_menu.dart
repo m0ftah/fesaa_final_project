@@ -1,4 +1,6 @@
-import 'package:fesaa_final_project/features/shop/screens/home/home_screen.dart';
+import 'package:fesaa_final_project/features/orders/screens/bookings/booking_screen.dart';
+import 'package:fesaa_final_project/features/orders/screens/home/home_screen.dart';
+import 'package:fesaa_final_project/features/personalization/screens/settings/settings.dart';
 import 'package:fesaa_final_project/utils/constants/colors.dart';
 import 'package:fesaa_final_project/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +28,9 @@ class NavigationMenu extends StatelessWidget {
               : TColors.black.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'WishList'),
+            NavigationDestination(
+                icon: Icon(Iconsax.calendar), label: 'My Booking'),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Favorate'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
         ),
@@ -41,14 +44,10 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     const HomeScreen(),
+    const Bookings(),
     Container(
       color: Colors.amber,
     ),
-    Container(
-      color: Colors.amber,
-    ),
-    Container(
-      color: Colors.amber,
-    ),
+    const SettingsScreen()
   ];
 }

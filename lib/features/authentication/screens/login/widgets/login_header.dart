@@ -1,4 +1,3 @@
-
 import 'package:fesaa_final_project/utils/constants/image_strings.dart';
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
 import 'package:fesaa_final_project/utils/constants/text_strings.dart';
@@ -18,10 +17,10 @@ class LoginHeader extends StatelessWidget {
       children: [
         /// Logo and Title and Subtitle
         Image(
-          height: 150,
-          image: AssetImage(
-              dark ? TImages.lightAppLogo : TImages.darkAppLogo),
+          height: 100,
+          image: AssetImage(dark ? TImages.lightAppLogo : TImages.darkAppLogo),
         ),
+        const SizedBox(height: TSizes.spaceBtwItems),
         Text(
           TTexts.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,
