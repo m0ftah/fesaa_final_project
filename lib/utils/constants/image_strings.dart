@@ -59,6 +59,7 @@ class TImages {
 
   // -- Services
   static const String cleaningImage1 = "assets/images/services/cl2.png";
+  static const String cleaningImage2 = "assets/images/services/images.jpg";
 
   // -- components
   static const String noActions = "assets/icons/components/Component1.png";

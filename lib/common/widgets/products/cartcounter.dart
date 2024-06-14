@@ -1,4 +1,3 @@
-
 import 'package:fesaa_final_project/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -20,7 +19,7 @@ class TCartCounterIcon extends StatelessWidget {
         IconButton(
           onPressed: onPressed,
           icon: Icon(
-            Iconsax.shopping_bag,
+            Iconsax.notification,
             color: iconColor,
           ),
         ),

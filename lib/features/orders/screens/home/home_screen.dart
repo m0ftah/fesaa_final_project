@@ -1,10 +1,11 @@
 import 'package:fesaa_final_project/common/custom_shapes/containers/primary_header_contaner.dart';
 import 'package:fesaa_final_project/common/custom_shapes/containers/search_container.dart';
+import 'package:fesaa_final_project/common/widgets/layouts/grid_layout.dart';
+import 'package:fesaa_final_project/common/widgets/products/service_card/service_vitecal_card.dart';
 import 'package:fesaa_final_project/common/widgets/texts/section_heading.dart';
 import 'package:fesaa_final_project/features/orders/screens/home/widgets/home_appbar.dart';
 import 'package:fesaa_final_project/features/orders/screens/home/widgets/home_catagoreis.dart';
 import 'package:fesaa_final_project/features/orders/screens/home/widgets/promo_slider.dart';
-import 'package:fesaa_final_project/features/orders/screens/home/widgets/service_slider.dart';
 import 'package:fesaa_final_project/utils/constants/colors.dart';
 import 'package:fesaa_final_project/utils/constants/image_strings.dart';
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
@@ -15,12 +16,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// -- Header --
-            TPrimaryHeaderContaner(
+            const TPrimaryHeaderContaner(
               child: Column(
                 children: [
                   /// -- AppBar --
@@ -67,28 +68,41 @@ class HomeScreen extends StatelessWidget {
             /// --- Body ---
             /// Home promo ---
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  TPromoSlider(
+                  const TPromoSlider(
                     banners: [
                       TImages.promoBanner1,
                       TImages.promoBanner2,
                       TImages.promoBanner3
                     ],
                   ),
-                  SizedBox(
-                    height: TSizes.spaceBtwSections / 1.5,
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
                   ),
 
-                  /// Cleaning Services
-                  TSectionHeading(title: 'Cleaning Services'),
-                  SizedBox(
+                  TSectionHeading(
+                    title: 'Cleaning Services',
+                    showActionBotton: true,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  TServiceSlider(
-                    title: 'Carpet Cleaning',
-                  )
+
+                  ///  Services
+                  TGridLayout(
+               
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const ServiceVCard(
+                      showdiscount: false,
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
                 ],
               ),
             ),

@@ -3,6 +3,7 @@ import 'package:fesaa_final_project/common/widgets/products/cartcounter.dart';
 import 'package:fesaa_final_project/utils/constants/colors.dart';
 import 'package:fesaa_final_project/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -12,7 +13,6 @@ class THomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TAppBar(
-      
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,6 +37,12 @@ class THomeAppBar extends StatelessWidget {
           onPressed: () {},
           iconColor: TColors.white,
         ),
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Iconsax.heart,
+              color: TColors.white,
+            ))
       ],
     );
   }

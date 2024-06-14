@@ -8,9 +8,10 @@ import 'package:flutter/material.dart';
 class TServiceSlider extends StatelessWidget {
   const TServiceSlider({
     super.key,
-    required this.title,
+    required this.title,  this.onTap,
   });
   final String title;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class TServiceSlider extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) {
           return GestureDetector(
+            onTap: onTap,
             child: Padding(
               padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
               child: Column(
