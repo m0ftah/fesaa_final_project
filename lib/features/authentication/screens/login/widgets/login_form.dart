@@ -1,6 +1,7 @@
-import 'package:fesaa_final_project/features/authentication/screens/location/location.dart';
+
 import 'package:fesaa_final_project/features/authentication/screens/password_configration/forget_password.dart';
 import 'package:fesaa_final_project/features/authentication/screens/sing_up/singup.dart';
+import 'package:fesaa_final_project/navigation_menu.dart';
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
 import 'package:fesaa_final_project/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const Location()),
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(TTexts.signIn),
               ),
             ),

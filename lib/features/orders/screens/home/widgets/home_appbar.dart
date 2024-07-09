@@ -39,8 +39,8 @@ class THomeAppBar extends StatelessWidget {
         ),
         IconButton(
             onPressed: () {},
-            icon: Icon(
-              Iconsax.heart,
+            icon: const Icon(
+              Iconsax.location,
               color: TColors.white,
             ))
       ],

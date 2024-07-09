@@ -1,15 +1,14 @@
 
 import 'package:fesaa_final_project/utils/constants/sizes.dart';
-import 'package:fesaa_final_project/utils/constants/text_strings.dart';
 import 'package:fesaa_final_project/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../styles/spacing_styles.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.image, required this.title, required this.subtitle,  required this.onPressed});
+  const SuccessScreen({super.key, required this.image, required this.title, required this.subtitle,  required this.onPressed, required this.buttonText});
 
-  final String image, title, subtitle;
+  final String image, title, subtitle , buttonText;
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
@@ -54,7 +53,7 @@ class SuccessScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: onPressed,
-                    child: const Text(TTexts.tContinue)),
+                    child:  Text(buttonText)),
               ),
             ],
           ),

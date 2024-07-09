@@ -1,7 +1,10 @@
+import 'dart:ui';
+import 'package:fesaa_final_project/features/orders/screens/service_detail/summery_screen.dart';
 import 'package:fesaa_final_project/utils/constants/image_strings.dart';
+import 'package:fesaa_final_project/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ServiceDetailScreen extends StatefulWidget {
   const ServiceDetailScreen({super.key});
@@ -11,12 +14,11 @@ class ServiceDetailScreen extends StatefulWidget {
 }
 
 class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
+  final TextEditingController _dateController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cleaning Service'),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -33,7 +35,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                 ),
               ),
               const Positioned(
-                top: 150,
+                top: 175,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -41,14 +43,14 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                       '★4.5',
                       style: TextStyle(fontSize: 22.0, color: Colors.white),
                     ),
-                    Text('AC Regular Service'),
+                    Text(
+                      'AC Regular Service',
+                      style: TextStyle(fontSize: 22.0, color: Colors.white),
+                    ),
                   ],
                 ),
               ),
             ]),
-            // const SizedBox(
-            //   height: 200,
-            // ),
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -57,7 +59,10 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                   children: [
                     const SizedBox(height: 8.0),
                     const SizedBox(height: 16.0),
-                    const Text('Type of Property'),
+                    Text(
+                      'Type of Property',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
                     Row(
                       children: [
                         Radio(
@@ -122,21 +127,51 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Total: USD 150.50'),
                         Text('Bill Details'),
+                        Text('Total: USD 150.50'),
+                      ],
+                    ),
+                    const SizedBox(height: 16.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: TSizes.buttonWidth * 3,
+                          child: TextField(
+                            controller: _dateController,
+                            decoration: const InputDecoration(
+                              labelText: 'Chose the date',
+                              prefixIcon: Icon(Iconsax.calendar),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide.none),
+                            ),
+                            selectionHeightStyle: BoxHeightStyle.max,
+                            readOnly: true,
+                            onTap: () {
+                              _selectDate();
+                            },
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 16.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ElevatedButton(
-                          onPressed: () => print('Save Draft'),
-                          child: const Text('Save Draft'),
+                        SizedBox(
+                          width: TSizes.buttonWidth,
+                          child: ElevatedButton(
+                            onPressed: () => print('Save Draft'),
+                            child: const Text('Save Draft'),
+                          ),
                         ),
-                        ElevatedButton(
-                          onPressed: () => print('Book Now'),
-                          child: const Text('Book Now'),
+                        SizedBox(
+                          width: TSizes.buttonWidth,
+                          child: ElevatedButton(
+                            onPressed: () =>
+                                Get.to(() => const SummeryScreem()),
+                            child: const Text('Book Now'),
+                          ),
                         ),
                       ],
                     ),
@@ -148,5 +183,16 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _selectDate() async {
+    DateTime? picked = await showDatePicker(
+        context: context, firstDate: DateTime(2022), lastDate: DateTime(2025));
+
+    if (picked != null) {
+      setState(() {
+        _dateController.text = picked.toString().split(" ")[0];
+      });
+    }
   }
 }

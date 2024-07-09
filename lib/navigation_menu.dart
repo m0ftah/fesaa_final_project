@@ -8,7 +8,9 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu({super.key});
+  const NavigationMenu( {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

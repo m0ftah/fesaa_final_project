@@ -1,4 +1,6 @@
 import 'package:fesaa_final_project/data/models/selectionPopupModel/selection_popup_model.dart';
+
+import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 class ServiceDetailsModel {
